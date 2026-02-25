@@ -267,123 +267,7 @@
             letter-spacing: 1px;
         }
 
-        /* Секции жениха и невесты */
-        .couple-section {
-            height: 100vh;
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .couple-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-        }
-
-        .couple-content {
-            position: relative;
-            width: 50%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 8%;
-            z-index: 2;
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s ease;
-        }
-
-        .couple-content.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .couple-bg {
-            position: relative;
-            width: 50%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transform: translateX(100px);
-            transition: all 1s ease;
-        }
-
-        .couple-bg.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Жених */
-        .groom-section {
-            background: #f8f8f8;
-        }
-
-        .groom-section .couple-content {
-            background: #f8f8f8;
-            text-align: left;
-        }
-
-        .groom-section .couple-bg {
-            background-image: url('3.jpg');
-            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-
-        /* Невеста */
-        .bride-section {
-            background: #f0f0f0;
-        }
-
-        .bride-section .couple-container {
-            flex-direction: row-reverse;
-        }
-
-        .bride-section .couple-content {
-            background: #f0f0f0;
-            text-align: right;
-            transform: translateX(100px);
-        }
-
-        .bride-section .couple-content.visible {
-            transform: translateX(0);
-        }
-
-        .bride-section .couple-bg {
-            background-image: url('4.jpg');
-            background-position: center 70%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
-            transform: translateX(-100px);
-        }
-
-        .bride-section .couple-bg.visible {
-            transform: translateX(0);
-        }
-
-        .couple-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: #2c2c2c;
-        }
-
-        .couple-content p {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .signature {
-            font-style: italic;
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 20px;
-        }
-
+        /* Секция локации */
         .location-section {
             background: linear-gradient(135deg, #f0f0f0 0%, #e2e2e2 100%);
             padding: 80px 0;
@@ -412,7 +296,7 @@
             flex: 1 1 50%;
             background: url('11.jpg') no-repeat center center/cover;
             min-height: 400px;
-             background-position: center 70%; 
+            background-position: center 70%;
         }
 
         .location-content {
@@ -460,31 +344,6 @@
             font-size: 1rem;
         }
 
-        /* Адаптивность локации: вертикальное расположение */
-            .location-card {
-                flex-direction: column;
-                border-radius: 24px;
-            }
-            .location-image {
-                flex: none;
-                width: 100%;
-                min-height: 300px;
-            }
-            .location-content {
-                padding: 35px 25px;
-            }
-            .location-content h2 {
-                font-size: 2rem;
-                text-align: center;
-            }
-            .location-content p {
-                font-size: 1.1rem;
-                justify-content: center;
-            }
-            .location-divider { margin: 20px auto; }
-            .location-note { text-align: center; }
-        
-
         /* Детали мероприятия */
         .details {
             background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
@@ -525,33 +384,6 @@
             margin-bottom: 10px;
         }
 
-        .color-palette {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .color-item {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .color-item:hover {
-            transform: scale(1.1);
-        }
-
-        .color-navy { background: #1e3a5f; }
-        .color-burgundy { background: #800020; }
-        .color-gold { background: #d4af37; }
-        .color-ivory { background: #fffff0; }
-        .color-sage { background: #9caf88; }
-
         /* Галерея */
         .gallery-section {
             background: white;
@@ -577,7 +409,7 @@
 
         .gallery-item img {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Это создает идеальный квадрат */
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -590,19 +422,205 @@
         }
 
         .gallery-item:nth-child(1) img {
-            object-position: 30% 40%; /* Смещает первое изображение */
+            object-position: 30% 0%;
         }
 
         .gallery-item:nth-child(2) img {
-            object-position: 30% 30%; /* Смещает первое изображение */
+            object-position: 30% 30%;
         }
 
         .gallery-item:nth-child(3) img {
-            object-position: 30% 0%; /* Смещает первое изображение */
+            object-position: 30% 0%;
         }
 
         .gallery-item:nth-child(4) img {
-            object-position: 30% 35%; /* Смещает первое изображение */
+            object-position: 30% 35%;
+        }
+
+        /* Секция пожеланий */
+        .wedding-wishes {
+            padding: 100px 0;
+            background: linear-gradient(145deg, #fcf5f5 0%, #fae1e1 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wedding-wishes .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .wedding-wishes h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: #2c2c2c;
+            margin-bottom: 50px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .wedding-wishes h2::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b8860b, #b8860b, #b8860b, transparent);
+        }
+
+        .wishes-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 60px 60px 40px 40px;
+            padding: 60px 70px;
+            box-shadow: 0 40px 70px rgba(184, 134, 11, 0.15),
+                        0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            position: relative;
+            transition: all 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .wishes-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 50px 80px rgba(184, 134, 11, 0.2);
+        }
+
+        .wishes-greeting {
+            text-align: center;
+            font-size: 2rem;
+            color: #b8860b;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .wishes-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            padding: 0 30px;
+            position: relative;
+        }
+
+        .wishes-items {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .wish-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+            padding: 20px 30px;
+            border-radius: 100px 20px 20px 100px;
+            border-left: 5px solid #b8860b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .wish-item:hover {
+            transform: translateX(15px);
+            background: linear-gradient(135deg, #fff0f0 0%, #ffe5e5 100%);
+            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.15);
+        }
+
+        .wish-item:nth-child(2) {
+            border-left-color: #9e7409;
+            margin-left: 20px;
+        }
+
+        .wish-icon {
+            font-size: 3rem;
+            min-width: 70px;
+            text-align: center;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .wish-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wish-title {
+            font-size: 1.5rem;
+            color: #b8860b;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .wish-description {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .wishes-footer {
+            text-align: center;
+            margin: 50px 0 30px;
+            padding: 30px 0 0;
+            border-top: 2px dashed #b8860b;
+            position: relative;
+        }
+
+        .wishes-footer::before {
+            content: "✧";
+            position: absolute;
+            top: -27px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 0 20px;
+            font-size: 2rem;
+            color: #b8860b;
+        }
+
+        .wishes-final {
+            font-size: 1.3rem;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            background: rgba(184, 134, 11, 0.05);
+            padding: 20px 40px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .signature {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .signature span {
+            font-size: 1.2rem;
+            color: #777;
+            letter-spacing: 2px;
+        }
+
+        .signature strong {
+            font-size: 2.5rem;
+            color: #b8860b;
+            font-weight: 500;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(184, 134, 11, 0.2);
         }
 
         /* RSVP форма */
@@ -614,6 +632,11 @@
 
         .rsvp h2 {
             color: white;
+        }
+
+        .rsvp p {
+            color: #ddd;
+            margin-bottom: 40px;
         }
 
         .rsvp-form {
@@ -696,6 +719,7 @@
             font-family: inherit;
             opacity: 0;
             transform: translateY(30px);
+            transition: all 0.3s ease, opacity 0.8s ease, transform 0.8s ease;
         }
 
         .btn.visible {
@@ -709,6 +733,173 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .modal-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: bounce 0.5s ease;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: #2c2c2c;
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .modal-message {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .modal-close {
+            background: #b8860b;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+        }
+
+        .modal-close:hover {
+            background: #9e7409;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.3);
+        }
+
+        .modal-close:active {
+            transform: translateY(0);
+        }
+
+        /* Модальное окно для ошибок */
+        .modal.error .modal-icon {
+            color: #dc3545;
+        }
+
+        .modal.error .modal-close {
+            background: #dc3545;
+        }
+
+        .modal.error .modal-close:hover {
+            background: #c82333;
+        }
+
+        /* Музыкальная кнопка */
+        .music-button-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 40px auto 0;
+            cursor: pointer;
+        }
+
+        .music-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-button:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translate(-50%, -50%) scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .music-button.playing {
+            background: rgba(184, 134, 11, 0.6);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .music-icon {
+            font-size: 2.2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .music-button.playing .music-icon {
+            animation: pulse 1.5s ease infinite;
+        }
+
+        .rotating-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .rotating-text text {
+            fill: white;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+        }
+
         footer {
             background: #1a1a1a;
             color: white;
@@ -716,709 +907,128 @@
             padding: 50px 0;
         }
 
-        .notification {
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 8px;
-            text-align: center;
-            display: none;
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1rem;
         }
 
-        .notification.show {
-            display: block;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
 
-        .loading {
-            background-color: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .wedding-wishes {
-    padding: 100px 0;
-    background: linear-gradient(145deg, #fcf5f5 0%, #fae1e1 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Фоновые декорации */
-.wedding-wishes::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(184, 134, 11, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(184, 134, 11, 0.03) 0%, transparent 30%);
-    pointer-events: none;
-}
-
-.wedding-wishes .container {
-    position: relative;
-    z-index: 2;
-}
-
-.wedding-wishes h2 {
-    text-align: center;
-    font-size: 3rem;
-    color: #2c2c2c;
-    margin-bottom: 50px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.wedding-wishes h2::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #b8860b, #b8860b, #b8860b, transparent);
-}
-
-.wishes-card {
-    max-width: 900px;
-    margin: 0 auto;
-    background: #ffffff; /* Сплошной белый фон */
-    border-radius: 60px 60px 40px 40px;
-    padding: 60px 70px;
-    box-shadow: 0 40px 70px rgba(184, 134, 11, 0.15),
-                0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(184, 134, 11, 0.2);
-    position: relative;
-    transition: all 0.4s ease;
-    -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов */
-    -moz-osx-font-smoothing: grayscale;
-    transform: translateZ(0); /* Аппаратное ускорение */
-    backface-visibility: hidden;
-}
-
-.wishes-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 50px 80px rgba(184, 134, 11, 0.2);
-}
-
-.wishes-header {
-    text-align: center;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.heart-decoration {
-    font-size: 2rem;
-    opacity: 0.5;
-    animation: float 3s ease-in-out infinite;
-}
-
-.heart-decoration:nth-child(2) {
-    animation-delay: 0.5s;
-    font-size: 2.5rem;
-    opacity: 0.7;
-}
-
-.heart-decoration:nth-child(3) {
-    animation-delay: 1s;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.wishes-greeting {
-    text-align: center;
-    font-size: 2rem;
-    color: #b8860b;
-    margin-bottom: 25px;
-    font-style: italic;
-    font-weight: 500;
-}
-
-.wishes-text {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 50px;
-    padding: 0 30px;
-    position: relative;
-}
-
-/* .wishes-text::before,
-.wishes-text::after {
-    content: "„";
-    position: absolute;
-    font-size: 4rem;
-    color: rgba(184, 134, 11, 0.2);
-    font-family: serif;
-}
-
-.wishes-text::before {
-    top: -20px;
-    left: 0;
-}
-
-.wishes-text::after {
-    content: "“";
-    bottom: -40px;
-    right: 0;
-} */
-
-.wishes-items {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin: 50px 0;
-}
-
-.wish-item {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
-    padding: 20px 30px;
-    border-radius: 100px 20px 20px 100px;
-    border-left: 5px solid #b8860b;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.wish-item:hover {
-    transform: translateX(15px);
-    background: linear-gradient(135deg, #fff0f0 0%, #ffe5e5 100%);
-    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.15);
-}
-
-.wish-item:nth-child(2) {
-    border-left-color: #9e7409;
-    margin-left: 20px;
-}
-
-.wish-item:nth-child(3) {
-    border-left-color: #7a5a08;
-    margin-left: 40px;
-}
-
-.wish-icon {
-    font-size: 3rem;
-    min-width: 70px;
-    text-align: center;
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.1));
-}
-
-.wish-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.wish-title {
-    font-size: 1.5rem;
-    color: #b8860b;
-    font-weight: 600;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-}
-
-.wish-description {
-    font-size: 1.1rem;
-    color: #666;
-}
-
-.wishes-footer {
-    text-align: center;
-    margin: 50px 0 30px;
-    padding: 30px 0 0;
-    border-top: 2px dashed #b8860b;
-    position: relative;
-}
-
-.wishes-footer::before {
-    content: "✧";
-    position: absolute;
-    top: -27px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 0 20px;
-    font-size: 2rem;
-    color: #b8860b;
-}
-
-.wishes-final {
-    font-size: 1.3rem;
-    color: #444;
-    font-style: italic;
-    margin-bottom: 30px;
-    line-height: 1.8;
-    background: rgba(184, 134, 11, 0.05);
-    padding: 20px 40px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-.signature {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.signature span {
-    font-size: 1.2rem;
-    color: #777;
-    letter-spacing: 2px;
-}
-
-.signature strong {
-    font-size: 2.5rem;
-    color: #b8860b;
-    font-weight: 500;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 4px;
-    text-shadow: 2px 2px 4px rgba(184, 134, 11, 0.2);
-}
-
-.wishes-footer-decoration {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.ring-decoration {
-    font-size: 2rem;
-    opacity: 0.4;
-    animation: spin 10s linear infinite;
-}
-
-.ring-decoration:nth-child(2) {
-    animation-duration: 8s;
-    animation-direction: reverse;
-}
-
-.ring-decoration:nth-child(3) {
-    animation-duration: 12s;
-}
-
-
-/* Музыкальная кнопка */
-.music-button-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 40px auto 0;
-    cursor: pointer;
-}
-
-.music-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(8px);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 2;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.music-button:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translate(-50%, -50%) scale(1.05);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
-.music-button.playing {
-    background: rgba(184, 134, 11, 0.6);
-    border-color: rgba(255, 255, 255, 0.8);
-}
-
-.music-icon {
-    font-size: 2.2rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.music-button.playing .music-icon {
-    animation: pulse 1.5s ease infinite;
-}
-
-.rotating-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: rotate 10s linear infinite;
-}
-
-.rotating-text text {
-    fill: white;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 500;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    opacity: 0.9;
-}
-
-.rotating-text.paused {
-    animation-play-state: paused;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .music-button-container {
-        width: 100px;
-        height: 100px;
-        margin: 30px auto 0;
-    }
-    
-    .music-button {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .music-icon {
-        font-size: 1.8rem;
-    }
-    
-    .rotating-text text {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .music-button-container {
-        width: 90px;
-        height: 90px;
-        margin: 20px auto 0;
-    }
-    
-    .music-button {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .music-icon {
-        font-size: 1.5rem;
-    }
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Адаптивность */
-@media (max-width: 992px) {
-    .wishes-card {
-        padding: 50px 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .wedding-wishes {
-        padding: 70px 0;
-    }
-    
-    .wedding-wishes h2 {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-    }
-    
-    .wishes-card {
-        padding: 40px 25px;
-        border-radius: 40px;
-    }
-    
-    .wishes-greeting {
-        font-size: 1.8rem;
-    }
-    
-    .wishes-text {
-        font-size: 1.1rem;
-        padding: 0 15px;
-    }
-    
-    .wish-item {
-        gap: 20px;
-        padding: 15px 20px;
-    }
-    
-    .wish-item:nth-child(2) {
-        margin-left: 10px;
-    }
-    
-    .wish-item:nth-child(3) {
-        margin-left: 20px;
-    }
-    
-    .wish-icon {
-        font-size: 2.5rem;
-        min-width: 50px;
-    }
-    
-    .wish-title {
-        font-size: 1.3rem;
-    }
-    
-    .wish-description {
-        font-size: 1rem;
-    }
-    
-    .wishes-final {
-        font-size: 1.1rem;
-        padding: 15px 25px;
-    }
-    
-    .signature strong {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .wedding-wishes h2 {
-        font-size: 2rem;
-    }
-    
-    .wishes-card {
-        padding: 30px 15px;
-    }
-    
-    .wishes-greeting {
-        font-size: 1.5rem;
-    }
-    
-    .wishes-text {
-        font-size: 1rem;
-        padding: 0 5px;
-    }
-    
-    .wish-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-        border-radius: 20px;
-        border-left: none;
-        border-top: 5px solid #b8860b;
-        margin-left: 0 !important;
-        padding: 20px;
-    }
-    
-    .wish-icon {
-        font-size: 3rem;
-    }
-    
-    .wish-title {
-        font-size: 1.2rem;
-    }
-    
-    .wish-description {
-        font-size: 0.95rem;
-    }
-    
-    .wishes-final {
-        font-size: 1rem;
-        padding: 12px 15px;
-    }
-    
-    .signature strong {
-        font-size: 1.6rem;
-        letter-spacing: 2px;
-    }
-    
-    .heart-decoration {
-        font-size: 1.5rem;
-    }
-    
-    .heart-decoration:nth-child(2) {
-        font-size: 2rem;
-    }
-}
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
 
         /* Адаптивность */
+        @media (max-width: 992px) {
+            .location-card {
+                flex-direction: column;
+            }
+            
+            .location-image {
+                min-height: 300px;
+            }
+            
+            .wishes-card {
+                padding: 40px 30px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .couple-section {
-                height: 70vh;
-                min-height: 600px;
+            section {
+                padding: 60px 0;
             }
-
-            .couple-content {
-                width: 60%;
-                padding: 0 6%;
-            }
-
-            .couple-bg {
-                width: 40%;
-            }
-
-            .groom-section .couple-bg {
-                clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-            }
-
-            .bride-section .couple-bg {
-                clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
-            }
-
-            .couple-content h2 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-
-            .couple-content p {
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
-
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
             
             .names {
                 font-size: 2rem;
-                letter-spacing: 4px;
             }
             
             .date {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
             .calendar-container {
                 padding: 30px 20px;
             }
-
+            
             .calendar-day {
                 width: 35px;
                 height: 35px;
-                font-size: 0.9rem;
             }
-
+            
             .countdown-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .wishes-card {
+                padding: 30px 20px;
+            }
+            
+            .wish-item {
+                flex-direction: column;
+                text-align: center;
+                border-radius: 20px;
+                border-left: none;
+                border-top: 5px solid #b8860b;
+                margin-left: 0 !important;
             }
         }
 
         @media (max-width: 480px) {
-            .couple-section {
-                height: 60vh;
-                min-height: 500px;
-            }
-
-            .couple-content {
-                width: 65%;
-                padding: 0 5%;
-            }
-
-            .couple-bg {
-                width: 35%;
-            }
-
-            .groom-section .couple-bg {
-                clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-            }
-
-            .bride-section .couple-bg {
-                clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
-            }
-
-            .couple-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .couple-content p {
-                font-size: 0.8rem;
-            }
-
             .hero-content h1 {
                 font-size: 2rem;
             }
             
             .names {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             
-            .date {
-                font-size: 1.2rem;
-            }
-
             .calendar-day {
                 width: 30px;
                 height: 30px;
                 font-size: 0.8rem;
             }
-
-            .countdown-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+            
+            .modal-content {
+                padding: 30px 20px;
             }
-
-            .countdown-item {
-                padding: 20px 10px;
+            
+            .modal-title {
+                font-size: 1.5rem;
             }
-
-            .countdown-number {
-                font-size: 2rem;
-            }
-
-            .color-item {
-                width: 40px;
-                height: 40px;
+            
+            .modal-message {
+                font-size: 1rem;
             }
         }
     </style>
@@ -1432,21 +1042,21 @@
             <div class="names">Святослав & Светлана</div>
             <div class="date">19 Июля 2026</div>
             <p>Приглашаем вас разделить с нами радость этого особенного дня</p>
-                    <div class="music-button-container">
+            <div class="music-button-container">
                 <button id="musicToggle" class="music-button">
                     <span class="music-icon">♫</span>
                 </button>
-                    <svg class="rotating-text" viewBox="0 0 100 100">
-                        <defs>
-                            <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
-                        </defs>
-                        <text>
-                            <textPath href="#circle" startOffset="0%">
-                                включите музыку пожалуйста• 
-                            </textPath>
-                        </text>
-                    </svg>
-                </div>
+                <svg class="rotating-text" viewBox="0 0 100 100">
+                    <defs>
+                        <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                    </defs>
+                    <text>
+                        <textPath href="#circle" startOffset="0%">
+                            включите музыку пожалуйста• 
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
         </div>
     </section>
 
@@ -1467,7 +1077,6 @@
                     <div class="wedding-date">19 июля 2026</div>
                     <div class="wedding-text">Наш особенный день ❤️</div>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -1497,7 +1106,7 @@
         </div>
     </section>
 
-        <!-- Новая секция ЛОКАЦИЯ (вместо жениха/невесты) -->
+    <!-- Секция локации -->
     <section class="location-section">
         <div class="container">
             <h2>Место проведения</h2>
@@ -1522,12 +1131,13 @@
             <div class="detail-grid">
                 <div class="detail-card">
                     <h3>Венчание</h3>
-                    <p>Успенский храм <br>Город Усмань</p>
+                    <p>Успенский храм</p>
+                    <p>г. Усмань</p>
                     <p>13:00</p>
                 </div>
                 <div class="detail-card">
                     <h3>Сбор гостей</h3>
-                    <p>Фуршет</p>
+                    <p>Село Арзыбовка</p>
                     <p>15:30</p>
                 </div>
                 <div class="detail-card">
@@ -1555,16 +1165,16 @@
             <h2>Наши моменты</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="1.jpg" alt="Наш момент 1">
+                    <img src="5.jpg" alt="Наш момент 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="3.jpg" alt="Наш момент 3">
+                    <img src="1.jpg" alt="Наш момент 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="5.jpg" alt="Наш момент 5">
+                    <img src="4.jpg" alt="Наш момент 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="4.jpg" alt="Наш момент 5">
+                    <img src="3.jpg" alt="Наш момент 4">
                 </div>
             </div>
         </div>
@@ -1576,14 +1186,11 @@
             <h2>Наши пожелания</h2>
             
             <div class="wishes-card">
-
-                
                 <p class="wishes-greeting">Дорогие наши гости!</p>
                 
                 <p class="wishes-text">Мы очень рады, что вы разделите с нами этот особенный день. Самое главное для нас — ваше присутствие и тёплые слова. Но если вы хотите порадовать нас подарками, у нас есть небольшая просьба:</p>
                 
                 <div class="wishes-items">
-                    
                     <div class="wish-item">
                         <div class="wish-icon">🎁</div>
                         <div class="wish-content">
@@ -1591,17 +1198,16 @@
                             <span class="wish-description">Ваши пожелания в конвертах помогут осуществить наши мечты.</span>
                         </div>
                     </div>
-                    
+                </div>
                 
                 <div class="wishes-footer">
-                    <p class="wishes-final">Будем очень признательны, если Вы воздержитесь от криков «Горько». Ведь поцелуй - это знак выражения чувств, И он не может быть по заказу.</p>
+                    <p class="wishes-final">Будем очень признательны, если Вы воздержитесь от криков «Горько». Ведь поцелуй - это знак выражения чувств, и он не может быть по заказу.</p>
                     
                     <div class="signature">
                         <span>С любовью,</span>
                         <strong>Святослав & Светлана</strong>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -1610,9 +1216,7 @@
     <section class="rsvp">
         <div class="container">
             <h2>Подтвердите присутствие</h2>
-            <p>Пожалуйста, ответьте до 15 Июля 2026 года</p>
-            
-            <div id="notification" class="notification"></div>
+            <p>Пожалуйста, ответьте до 31 мая 2026 года</p>
             
             <form class="rsvp-form" id="weddingForm">
                 <div class="form-group">
@@ -1650,6 +1254,9 @@
                     <label for="alcohol">Предпочтения по алкоголю</label>
                     <select id="alcohol" name="alcohol">
                         <option value="" selected>Не важно</option>
+                        <option value="vodka">Водка</option>
+                        <option value="cognac">Коньяк</option>
+                        <option value="moonshine">Самогон</option>
                         <option value="red_wine">Красное вино</option>
                         <option value="white_wine">Белое вино</option>
                         <option value="champagne">Шампанское</option>
@@ -1670,7 +1277,6 @@
                     </select>
                 </div>
                 
-                
                 <div class="form-group">
                     <label for="message">Ваши пожелания и поздравления</label>
                     <textarea id="message" name="message" rows="4" placeholder="Поделитесь вашими пожеланиями..."></textarea>
@@ -1685,21 +1291,111 @@
     <footer>
         <div class="container">
             <p>Контакты для связи:</p>
-            <p>Жених +7-920-519-42-48</p>
-            <p>Невеста +7-903-028-83-13</p>
+            <p>Жених: +7-920-519-42-48</p>
+            <p>Невеста: +7-903-028-83-13</p>
         </div>
     </footer>
 
+    <!-- Модальное окно для успешной отправки -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h3 class="modal-title">Спасибо за ответ!</h3>
+            <p class="modal-message" id="successModalMessage">Ваш ответ успешно отправлен. Мы будем рады видеть вас на нашем празднике!</p>
+            <button class="modal-close" onclick="closeModal('successModal')">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ошибки -->
+    <div id="errorModal" class="modal error">
+        <div class="modal-content">
+            <div class="modal-icon">❌</div>
+            <h3 class="modal-title">Ошибка отправки</h3>
+            <p class="modal-message" id="errorModalMessage">Что-то пошло не так. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.</p>
+            <button class="modal-close" onclick="closeModal('errorModal')">Закрыть</button>
+        </div>
+    </div>
+
     <script>
-        const TELEGRAM_CONFIG = {
-            BOT_TOKEN: '8372798819:AAHKEu8fizIMt1u1Cxjwp0FN4dLQH-4gp94',
-            CHAT_ID: '-1003409020717'
+        // Конфигурация Google Apps Script
+        const GOOGLE_SCRIPT_CONFIG = {
+            // ЗАМЕНИТЕ ЭТОТ URL на ваш URL из Apps Script после публикации
+            URL: 'https://script.google.com/macros/s/AKfycbyPdwrQJ_Ak749k1mA-8NJDWNUFIg0sI2pBt-muOT2w8K7D-a49o1wiHJUG8VlRqFq0eA/exec'
         };
+
+        // Функции для модальных окон
+        function showModal(modalId, message) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            
+            if (message) {
+                const messageElement = document.getElementById(modalId + 'Message');
+                if (messageElement) {
+                    messageElement.textContent = message;
+                }
+            }
+            
+            modal.classList.add('show');
+            
+            // Автоматически закрыть через 5 секунд
+            setTimeout(() => closeModal(modalId), 5000);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Закрытие модального окна по клику вне его
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+            }
+        });
+
+        // Класс для отправки данных в Google Sheets
+        class GoogleSheetsSender {
+            constructor() {
+                this.scriptUrl = GOOGLE_SCRIPT_CONFIG.URL;
+            }
+
+            async sendFormData(formData) {
+                try {
+                    const params = new URLSearchParams();
+                    params.append('name', formData.name);
+                    params.append('phone', formData.phone);
+                    params.append('guests', formData.guests);
+                    params.append('attendance', formData.attendance);
+                    params.append('alcohol', formData.alcohol);
+                    params.append('transport', formData.transport);
+                    params.append('message', formData.message || '');
+                    
+                    const response = await fetch(this.scriptUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: params
+                    });
+                    
+                    showModal('successModal', 'Спасибо! Ваш ответ успешно отправлен. Мы ждем вас на нашем празднике! 💍');
+                    return true;
+                    
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    showModal('errorModal', '❌ Ошибка отправки. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
+                    return false;
+                }
+            }
+        }
 
         // Календарь
         class WeddingCalendar {
             constructor() {
-                this.currentDate = new Date(2026, 6, 19); // Август 2026 (месяцы 0-11)
+                this.currentDate = new Date(2026, 6, 19);
                 this.weddingDate = new Date(2026, 6, 19);
                 this.init();
             }
@@ -1726,10 +1422,8 @@
 
                 monthYear.textContent = `${monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
 
-                // Очищаем календарь
                 calendarGrid.innerHTML = '';
 
-                // Добавляем заголовки дней недели
                 const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
                 weekdays.forEach(day => {
                     const dayElement = document.createElement('div');
@@ -1738,26 +1432,22 @@
                     calendarGrid.appendChild(dayElement);
                 });
 
-                // Получаем первый день месяца и количество дней
                 const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
                 const lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
                 const daysInMonth = lastDay.getDate();
-                const startingDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Корректировка для понедельника
+                const startingDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
 
-                // Добавляем пустые ячейки для дней предыдущего месяца
                 for (let i = 0; i < startingDay; i++) {
                     const emptyDay = document.createElement('div');
                     emptyDay.className = 'calendar-day other-month';
                     calendarGrid.appendChild(emptyDay);
                 }
 
-                // Добавляем дни текущего месяца
                 for (let day = 1; day <= daysInMonth; day++) {
                     const dayElement = document.createElement('div');
                     dayElement.className = 'calendar-day';
                     dayElement.textContent = day;
 
-                    // Проверяем, является ли день днем свадьбы
                     if (this.currentDate.getMonth() === this.weddingDate.getMonth() &&
                         this.currentDate.getFullYear() === this.weddingDate.getFullYear() &&
                         day === this.weddingDate.getDate()) {
@@ -1769,12 +1459,9 @@
             }
         }
 
-        // Инициализация календаря
-        const weddingCalendar = new WeddingCalendar();
-
         // Таймер обратного отсчета
         function updateCountdown() {
-            const weddingDate = new Date('2026-07-19T09:00:00').getTime();
+            const weddingDate = new Date('2026-07-19T16:00:00').getTime();
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
@@ -1788,202 +1475,143 @@
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            } else {
-                document.getElementById('days').textContent = '000';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
             }
         }
 
-        // Запуск таймера
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Валидация телефона
+        function formatPhoneNumber(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 1) {
+                    value = '+7' + value;
+                } else if (value.length <= 4) {
+                    value = '+7 (' + value.substring(1, 4);
+                } else if (value.length <= 7) {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7);
+                } else if (value.length <= 9) {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9);
+                } else {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9) + '-' + value.substring(9, 11);
                 }
-            });
-        }, { threshold: 0.1 });
+                input.value = value;
+            }
+        }
 
+        // Инициализация при загрузке страницы
         document.addEventListener('DOMContentLoaded', () => {
+            // Инициализация календаря
+            const weddingCalendar = new WeddingCalendar();
+            
+            // Запуск таймера
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Инициализация отправки формы
+            const sheetsSender = new GoogleSheetsSender();
+            
+            // Форматирование телефона
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', () => formatPhoneNumber(phoneInput));
+            }
+            
+            // Настройка Intersection Observer для анимаций
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Наблюдаем за элементами для анимации
             const animatedElements = [
                 document.querySelector('.calendar-container'),
                 document.querySelector('.countdown h2'),
                 ...document.querySelectorAll('.countdown-item'),
-                ...document.querySelectorAll('.couple-content'),
-                ...document.querySelectorAll('.couple-bg'),
+                document.querySelector('.location-card'),
                 ...document.querySelectorAll('.detail-card'),
                 ...document.querySelectorAll('.form-group'),
                 ...document.querySelectorAll('.gallery-item'),
                 document.querySelector('.btn'),
-                document.querySelector('.location-card')
+                document.querySelector('.wishes-card')
             ];
-
+            
             animatedElements.forEach(element => {
                 if (element) observer.observe(element);
             });
-        });
-
-        class TelegramSender {
-            constructor() {
-                this.token = TELEGRAM_CONFIG.BOT_TOKEN;
-            }
-
-            getChatId() {
-                return TELEGRAM_CONFIG.CHAT_ID;
-            }
-
-            showNotification(message, type = 'success') {
-                const notification = document.getElementById('notification');
-                notification.textContent = message;
-                notification.className = `notification ${type} show`;
+            
+            // Обработчик отправки формы
+            document.getElementById('weddingForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
                 
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 5000);
-            }
-
-            async sendFormData(formData) {
-                const chatId = this.getChatId();
-                const message = this.formatMessage(formData);
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Отправка...';
                 
                 try {
-                    const response = await fetch(`https://api.telegram.org/bot${this.token}/sendMessage`, {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({
-                            chat_id: chatId,
-                            text: message,
-                            parse_mode: 'HTML'
-                        })
-                    });
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        guests: document.getElementById('guests').value,
+                        attendance: document.getElementById('attendance').value,
+                        alcohol: document.getElementById('alcohol').value,
+                        transport: document.getElementById('transport').value,
+                        message: document.getElementById('message').value.trim()
+                    };
                     
-                    const result = await response.json();
-                    return result.ok;
+                    // Проверка обязательных полей
+                    if (!formData.name || !formData.phone || !formData.attendance) {
+                        showModal('errorModal', '❌ Пожалуйста, заполните все обязательные поля');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+                    
+                    const success = await sheetsSender.sendFormData(formData);
+                    
+                    if (success) {
+                        e.target.reset();
+                    }
                 } catch (error) {
                     console.error('Ошибка:', error);
-                    return false;
+                    showModal('errorModal', '❌ Произошла ошибка. Пожалуйста, свяжитесь с нами напрямую.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
                 }
-            }
-
-            formatMessage(data) {
-                const attendanceText = {
-                    'yes': '✅ С радостью приду!',
-                    'no': '❌ К сожалению, не смогу',
-                    'maybe': '❓ Пока не уверен(а)'
-                }[data.attendance] || data.attendance;
-
-                const alcoholText = {
-                    'red_wine': '🍷 Красное вино',
-                    'white_wine': '🥂 Белое вино', 
-                    'champagne': '🍾 Шампанское',
-                    'non_alcoholic': '🧃 Безалкогольные напитки',
-                    '': 'Не важно'
-                }[data.alcohol] || data.alcohol;
-
-                return `
-<b>🎉 НОВЫЙ ОТВЕТ НА СВАДЕБНОЕ ПРИГЛАШЕНИЕ</b>
-
-<b>👤 Имя:</b> ${data.name}
-<b>📞 Телефон:</b> ${data.phone}
-<b>👥 Гостей:</b> ${data.guests}
-
-<b>✅ Присутствие:</b> ${attendanceText}
-<b>🍷 Алкоголь:</b> ${alcoholText}
-
-<b>⚠️ Аллергии/особенности:</b> ${data.allergies || 'нет'}
-<b>💌 Пожелания:</b> ${data.message || 'нет'}
-
-<b>📅 Отправлено:</b> ${new Date().toLocaleString('ru-RU')}
-                `.trim();
-            }
-        }
-
-        const telegramSender = new TelegramSender();
-
-        document.getElementById('weddingForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
+            });
             
-            const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Отправка...';
-            telegramSender.showNotification('Отправляем ваш ответ...', 'loading');
-            
-            try {
-                const formData = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    guests: document.getElementById('guests').value,
-                    attendance: document.getElementById('attendance').value,
-                    transport: document.getElementById('transport').value,
-                    alcohol: document.getElementById('alcohol').value,
-                    allergies: document.getElementById('allergies').value,
-                    message: document.getElementById('message').value
-                };
-                
-                const success = await telegramSender.sendFormData(formData);
-                
-                if (success) {
-                    telegramSender.showNotification('✅ Спасибо! Ваш ответ отправлен организаторам.', 'success');
-                    e.target.reset();
-                } else {
-                    telegramSender.showNotification('❌ Ошибка отправки. Пожалуйста, попробуйте еще раз.', 'error');
-                }
-            } catch (error) {
-                telegramSender.showNotification('❌ Произошла ошибка. Пожалуйста, свяжитесь с нами напрямую.', 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            }
-        });
-
-
-                // Музыкальная кнопка
-        document.addEventListener('DOMContentLoaded', function() {
+            // Музыкальная кнопка
             const musicButton = document.getElementById('musicToggle');
             const rotatingText = document.querySelector('.rotating-text');
             
-            // Создаем аудио элемент (замените 'your-music-file.mp3' на путь к вашему файлу)
-            const audio = new Audio();
-            audio.src = '1.mp3'; // Укажите путь к вашему аудиофайлу
-            audio.loop = true; // Зацикливаем воспроизведение
-            
-            // Состояние воспроизведения
-            let isPlaying = false;
-            
-            musicButton.addEventListener('click', function() {
-                if (isPlaying) {
-                    audio.pause();
-                    musicButton.classList.remove('playing');
-                    rotatingText.style.animationPlayState = 'running'; // Текст продолжает вращаться
-                } else {
-                    // Пытаемся воспроизвести музыку
-                    audio.play().then(() => {
-                        musicButton.classList.add('playing');
-                        rotatingText.style.animationPlayState = 'running';
-                    }).catch(error => {
-                        console.log('Автовоспроизведение заблокировано браузером:', error);
-                        // Показываем уведомление, что нужно взаимодействие с пользователем
-                        alert('Нажмите на кнопку еще раз, чтобы включить музыку (требуется взаимодействие с сайтом)');
-                    });
-                }
-                isPlaying = !isPlaying;
-            });
-            
-            // Добавляем обработчик для первой попытки воспроизведения
-            // (многие браузеры блокируют автовоспроизведение без взаимодействия)
-            document.addEventListener('click', function initAudio() {
-                // Если музыка еще не играла и пользователь уже кликнул где-то на странице
-                if (!isPlaying && audio.paused) {
-                    // Удаляем обработчик после первого клика
-                    document.removeEventListener('click', initAudio);
-                }
-            }, { once: true });
+            if (musicButton) {
+                const audio = new Audio();
+                audio.src = '1.mp3';
+                audio.loop = true;
+                
+                let isPlaying = false;
+                
+                musicButton.addEventListener('click', () => {
+                    if (isPlaying) {
+                        audio.pause();
+                        musicButton.classList.remove('playing');
+                    } else {
+                        audio.play()
+                            .then(() => {
+                                musicButton.classList.add('playing');
+                            })
+                            .catch(error => {
+                                console.log('Автовоспроизведение заблокировано:', error);
+                                showModal('errorModal', 'Нажмите на кнопку еще раз, чтобы включить музыку');
+                            });
+                    }
+                    isPlaying = !isPlaying;
+                });
+            }
         });
     </script>
 </body>
