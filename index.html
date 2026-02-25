@@ -577,7 +577,7 @@
 
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            aspect-ratio: 1 / 1; /* Это создает идеальный квадрат */
             object-fit: cover;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -587,6 +587,22 @@
         .gallery-item img:hover {
             transform: scale(1.05);
             filter: grayscale(0%);
+        }
+
+        .gallery-item:nth-child(1) img {
+            object-position: 30% 40%; /* Смещает первое изображение */
+        }
+
+        .gallery-item:nth-child(2) img {
+            object-position: 30% 30%; /* Смещает первое изображение */
+        }
+
+        .gallery-item:nth-child(3) img {
+            object-position: 30% 0%; /* Смещает первое изображение */
+        }
+
+        .gallery-item:nth-child(4) img {
+            object-position: 30% 35%; /* Смещает первое изображение */
         }
 
         /* RSVP форма */
@@ -1004,6 +1020,142 @@
     animation-duration: 12s;
 }
 
+
+/* Музыкальная кнопка */
+.music-button-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 40px auto 0;
+    cursor: pointer;
+}
+
+.music-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.music-button:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translate(-50%, -50%) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.music-button.playing {
+    background: rgba(184, 134, 11, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.music-icon {
+    font-size: 2.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.music-button.playing .music-icon {
+    animation: pulse 1.5s ease infinite;
+}
+
+.rotating-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.rotating-text text {
+    fill: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+.rotating-text.paused {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .music-button-container {
+        width: 100px;
+        height: 100px;
+        margin: 30px auto 0;
+    }
+    
+    .music-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .music-icon {
+        font-size: 1.8rem;
+    }
+    
+    .rotating-text text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-button-container {
+        width: 90px;
+        height: 90px;
+        margin: 20px auto 0;
+    }
+    
+    .music-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .music-icon {
+        font-size: 1.5rem;
+    }
+}
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -1280,6 +1432,21 @@
             <div class="names">Святослав & Светлана</div>
             <div class="date">19 Июля 2026</div>
             <p>Приглашаем вас разделить с нами радость этого особенного дня</p>
+                    <div class="music-button-container">
+                <button id="musicToggle" class="music-button">
+                    <span class="music-icon">♫</span>
+                </button>
+                    <svg class="rotating-text" viewBox="0 0 100 100">
+                        <defs>
+                            <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                        </defs>
+                        <text>
+                            <textPath href="#circle" startOffset="0%">
+                                ВКЛЮЧИТЕ МУЗЫКУ • ВКЛЮЧИТЕ МУЗЫКУ •
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
         </div>
     </section>
 
@@ -1300,6 +1467,7 @@
                     <div class="wedding-date">19 июля 2026</div>
                     <div class="wedding-text">Наш особенный день ❤️</div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -1336,7 +1504,7 @@
             <div class="location-card" id="locationCard">
                 <div class="location-image" role="img" aria-label="Ресторан Белый Лебедь"></div>
                 <div class="location-content">
-                    <h2>База отдыха "Рыбацкая заводь"</h2>
+                    <h2>База отдыха <br>"Рыбацкая заводь"</h2>
                     <p> 19 июля 2026</p>
                     <p> село Арзыбовка, ул. Арзыбовка, 40Б</p>
                     <div class="location-divider"></div>
@@ -1354,7 +1522,7 @@
             <div class="detail-grid">
                 <div class="detail-card">
                     <h3>Венчание</h3>
-                    <p>Успенский храм Город Усмань</p>
+                    <p>Успенский храм <br>Город Усмань</p>
                     <p>13:00</p>
                 </div>
                 <div class="detail-card">
@@ -1420,14 +1588,13 @@
                         <div class="wish-icon">🎁</div>
                         <div class="wish-content">
                             <span class="wish-title">Лучший подарок</span>
-                            <span class="wish-description">Ваши пожелания в конвертах помгут осуществить наши мечты.</span>
+                            <span class="wish-description">Ваши пожелания в конвертах помогут осуществить наши мечты.</span>
                         </div>
                     </div>
                     
                 
                 <div class="wishes-footer">
-                    <p class="wishes-final">Мы хотим, чтобы вы могли расслабиться, танцевать до утра и ничего не контролировать. 
-Поэтому, пожалуйста, оставьте детей дома с нянями или бабушками.</p>
+                    <p class="wishes-final">Будем очень признательны, если Вы воздержитесь от криков «Горько». Ведь поцелуй - это знак выражения чувств, И он не может быть по заказу.</p>
                     
                     <div class="signature">
                         <span>С любовью,</span>
@@ -1773,6 +1940,50 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
             }
+        });
+
+
+                // Музыкальная кнопка
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicButton = document.getElementById('musicToggle');
+            const rotatingText = document.querySelector('.rotating-text');
+            
+            // Создаем аудио элемент (замените 'your-music-file.mp3' на путь к вашему файлу)
+            const audio = new Audio();
+            audio.src = '1.mp3'; // Укажите путь к вашему аудиофайлу
+            audio.loop = true; // Зацикливаем воспроизведение
+            
+            // Состояние воспроизведения
+            let isPlaying = false;
+            
+            musicButton.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    musicButton.classList.remove('playing');
+                    rotatingText.style.animationPlayState = 'running'; // Текст продолжает вращаться
+                } else {
+                    // Пытаемся воспроизвести музыку
+                    audio.play().then(() => {
+                        musicButton.classList.add('playing');
+                        rotatingText.style.animationPlayState = 'running';
+                    }).catch(error => {
+                        console.log('Автовоспроизведение заблокировано браузером:', error);
+                        // Показываем уведомление, что нужно взаимодействие с пользователем
+                        alert('Нажмите на кнопку еще раз, чтобы включить музыку (требуется взаимодействие с сайтом)');
+                    });
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Добавляем обработчик для первой попытки воспроизведения
+            // (многие браузеры блокируют автовоспроизведение без взаимодействия)
+            document.addEventListener('click', function initAudio() {
+                // Если музыка еще не играла и пользователь уже кликнул где-то на странице
+                if (!isPlaying && audio.paused) {
+                    // Удаляем обработчик после первого клика
+                    document.removeEventListener('click', initAudio);
+                }
+            }, { once: true });
         });
     </script>
 </body>
